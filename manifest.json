@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Codmon Image Downloader",
+  "version": "1.0",
+  "description": "parents.codmon.com で動作する画像のダウンローダーです",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon48.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["activeTab", "tabs", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://parents.codmon.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com; object-src 'self'"
+}
