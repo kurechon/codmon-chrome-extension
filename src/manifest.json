@@ -20,6 +20,5 @@
       "matches": ["*://parents.codmon.com/*"],
       "js": ["content.js"]
     }
-  ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://code.jquery.com https://stackpath.bootstrapcdn.com; object-src 'self'"
+  ]
 }

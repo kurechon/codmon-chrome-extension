@@ -1,37 +1,6 @@
-// Inject dependencies and call the provided callback function
-function injectDependencies(callback) {
-  const scripts = [
-    "https://code.jquery.com/jquery-3.6.0.min.js",
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
-  ];
-  const styles = [
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
-  ];
-
-  let remaining = scripts.length + styles.length;
-
-  function checkDone() {
-    remaining--;
-    if (remaining === 0) {
-      callback();
-    }
-  }
-
-  scripts.forEach((src) => {
-    const script = document.createElement("script");
-    script.src = src;
-    script.onload = checkDone;
-    document.head.appendChild(script);
-  });
-
-  styles.forEach((href) => {
-    const link = document.createElement("link");
-    link.href = href;
-    link.rel = "stylesheet";
-    link.onload = checkDone;
-    document.head.appendChild(link);
-  });
-}
+import $ from "jquery";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 async function getImageUrl(img) {
   let url = img.src;
@@ -180,6 +149,6 @@ async function displayImages() {
 // Listen for a message from the background script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "iconClicked") {
-    injectDependencies(displayImages);
+    displayImages();
   }
 });
