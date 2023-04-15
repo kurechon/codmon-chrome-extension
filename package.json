@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "parents.codmon.com で動作する画像のダウンローダーです",
   "scripts": {
-    "build": "webpack",
+    "clean": "rimraf dist/*",
+    "build": "yarn clean && webpack",
     "package": "mkdir -p releases && zip -r releases/codmon-image-downloader-v$npm_package_version.zip dist",
     "pre-release": "git fetch && git diff --exit-code origin/master",
     "release": "yarn pre-release && yarn build && yarn zip && yarn release:gh",
@@ -18,6 +19,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
     "file-loader": "^6.2.0",
+    "rimraf": "^5.0.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.1"
