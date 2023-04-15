@@ -6,7 +6,6 @@ module.exports = {
   entry: {
     background: "./src/background.js",
     content: "./src/content.js",
-    popup: "./src/popup.js",
   },
   output: {
     filename: "[name].js",
@@ -37,7 +36,6 @@ module.exports = {
       patterns: [
         { from: "src/manifest.json", to: "." },
         { from: "src/icons", to: "icons" },
-        { from: "src/popup.html", to: "." },
       ],
     }),
   ],
