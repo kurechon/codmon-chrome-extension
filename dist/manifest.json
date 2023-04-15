@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Codmon Image Downloader",
+  "name": "codmon-image-downloader",
   "version": "1.0.0",
   "description": "parents.codmon.com で動作する画像のダウンローダーです",
   "icons": {
@@ -11,12 +11,23 @@
     "service_worker": "background.js"
   },
   "action": {},
-  "permissions": ["activeTab", "tabs", "storage", "downloads"],
-  "host_permissions": ["*://*.codmon.com/*"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.codmon.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://parents.codmon.com/*"],
-      "js": ["content.js"]
+      "matches": [
+        "*://parents.codmon.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ]
 }

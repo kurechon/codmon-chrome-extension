@@ -34,7 +34,18 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "src/manifest.json", to: "." },
+        {
+          from: "src/manifest.json",
+          to: "manifest.json",
+          transform(content) {
+            const packageJson = require("./package.json");
+            const manifestJson = JSON.parse(content);
+            manifestJson.version = packageJson.version;
+            manifestJson.name = packageJson.name;
+            manifestJson.description = packageJson.description;
+            return JSON.stringify(manifestJson, null, 2);
+          },
+        },
         { from: "src/icons", to: "icons" },
       ],
     }),

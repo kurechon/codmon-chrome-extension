@@ -1,9 +1,10 @@
 {
-  "name": "chrome-extension",
+  "name": "codmon-image-downloader",
   "version": "1.0.0",
-  "description": "",
+  "description": "parents.codmon.com で動作する画像のダウンローダーです",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "release": "mkdir -p releases && zip -r releases/codmon-image-downloader-v$npm_package_version.zip dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.7",
