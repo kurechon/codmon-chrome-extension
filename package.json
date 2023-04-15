@@ -7,7 +7,7 @@
     "build": "yarn clean && webpack",
     "package": "mkdir -p releases && zip -r releases/codmon-image-downloader-v$npm_package_version.zip dist",
     "pre-release": "git fetch && git diff --exit-code origin/master",
-    "release": "yarn pre-release && yarn build && yarn zip && yarn release:gh",
+    "release": "yarn pre-release && yarn build && yarn package && yarn release:gh",
     "release:gh": "gh release create v$npm_package_version releases/codmon-image-downloader-v$npm_package_version.zip -t \"Release v$npm_package_version\" -n \"$(git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:'%h - %s%n')\""
   },
   "dependencies": {
