@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "codmon-image-downloader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "parents.codmon.com で動作する画像のダウンローダーです",
   "icons": {
     "48": "icons/icon48.png",
