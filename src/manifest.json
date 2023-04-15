@@ -11,7 +11,7 @@
     "service_worker": "background.js"
   },
   "action": {},
-  "permissions": ["activeTab", "tabs", "storage", "downloads"],
+  "permissions": ["activeTab", "storage", "downloads"],
   "host_permissions": ["*://*.codmon.com/*"],
   "content_scripts": [
     {
