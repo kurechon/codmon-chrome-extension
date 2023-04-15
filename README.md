@@ -24,15 +24,8 @@ Codmon Image Downloader は、parents.codmon.com で動作する画像のダウ�
 3. ページ内のすべての画像が一覧表示されます。
 4. ダウンロードしたい画像をクリックしてダウンロードします。
 
-## 開発者向け情報
+## Windows で保存した画像の拡張子が .jfif になる場合
 
-この拡張機能は以下の技術を使用しています。
+レジストリを変更してください
 
-- HTML
-- CSS
-- JavaScript
-- Chrome Extension API
-
-## ライセンス
-
-MIT License
+https://stackoverflow.com/questions/74304523/php-jpeg-image-being-saved-as-jfif-by-chrome

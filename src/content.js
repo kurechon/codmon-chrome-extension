@@ -146,12 +146,10 @@ function displayFetchedImages(overlay, imageUrls) {
     img.title = "Click to download";
     img.onclick = (event) => {
       event.preventDefault();
-      const link = document.createElement("a");
-      link.href = url;
-      link.target = "_blank";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      chrome.runtime.sendMessage({
+        action: "downloadImage",
+        url: url,
+      });
     };
     overlay.appendChild(img);
   });
