@@ -152,3 +152,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     displayImages();
   }
 });
+
+function createImageButton() {
+  const imageButton = document.createElement("button");
+  imageButton.id = "image-list-button";
+  imageButton.className = "btn btn-primary position-fixed";
+  imageButton.style.top = "10px";
+  imageButton.style.left = "10px";
+  imageButton.style.zIndex = "100000";
+  imageButton.textContent = "画像の一覧";
+  imageButton.onclick = () => displayImages();
+  document.body.appendChild(imageButton);
+}
+
+createImageButton();
