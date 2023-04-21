@@ -15,7 +15,7 @@ Codmon Image Downloader は、parents.codmon.com で動作する画像のダウ�
 
 ### ストアからインストール
 
-準備中
+[Chrome ウェブストア](https://chrome.google.com/webstore/detail/codmon-image-downloader/gllbfcdfgaiidlecfdanpjbfdieohlfj/related?hl=ja&authuser=0) からインストールできます
 
 ### ローカルインストール
 
